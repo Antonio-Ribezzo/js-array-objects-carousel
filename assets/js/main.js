@@ -87,6 +87,20 @@ prev.addEventListener('click', function(){
 
     document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
     carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
+})
+
+next.addEventListener('click', function(){
+    if(active == images.length -1){
+        active = 0
+    } else{
+        active++;
+    }
+
+    document.querySelector('.imgclass.active').classList.remove('active');
+    carosello.getElementsByClassName('imgclass')[active].classList.add('active')
+
+    document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
+    carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
 
 })
 
