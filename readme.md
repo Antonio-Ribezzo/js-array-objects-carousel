@@ -5,3 +5,10 @@ Dato un array di oggetti letterali con:
 - descrizione
 
 creare un carosello.
+
+
+```  
+git add .
+git commit -m "messaggio"
+git push
+```
