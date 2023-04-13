@@ -8,10 +8,6 @@ CONSEGNA:
     Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 - BONUS 1:
     Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
-- BONUS 2:
-    Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
-- BONUS 3:
-    Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 */
 
 // ARRAY DI OGGETTI
@@ -76,6 +72,29 @@ const next = document.querySelector('#nextArrow')
 
 //assegno degli eventi ai bottoni
 prev.addEventListener('click', function(){
+    prevImage()
+})
+
+next.addEventListener('click', function(){
+    nextImage()
+})
+
+// BONUS 2 e BONUS 3:
+// Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva. Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
+
+const btnStart = document.querySelector('#btnStart')
+const btnStop = document.querySelector('#btnStop')
+
+btnStart.addEventListener('click', () =>{
+    let start = setInterval(nextImage, 1000);
+    // stop function must be inside start function to access variable (start);
+    btnStop.addEventListener('click', () =>{
+        clearInterval(start);
+    })
+})
+
+/******************FUNCTIONS*****************/
+function prevImage(){
     if(active == 0){
         active = images.length -1
     } else{
@@ -87,9 +106,9 @@ prev.addEventListener('click', function(){
 
     document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
     carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
-})
+}
 
-next.addEventListener('click', function(){
+function nextImage(){
     if(active == images.length -1){
         active = 0
     } else{
@@ -101,6 +120,4 @@ next.addEventListener('click', function(){
 
     document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
     carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
-
-})
-
+}
