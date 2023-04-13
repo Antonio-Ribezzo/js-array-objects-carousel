@@ -38,3 +38,24 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+// creo dinamicamente gli elementi nel DOM 
+const carosello = document.querySelector('#carosello')
+const thumb = document.querySelector('#thumb')
+
+//thumbnails
+for(let i = 0; i<=images.length-1; i++){
+    thumb.innerHTML+=`
+        <div class="item">
+            <img src="./assets/${images[i].image}" alt="${images[i].title}" class="thumbclass">
+        </div>
+    `
+}
+
+// large images
+for(let i = 0; i<=images.length-1; i++){
+    carosello.innerHTML+=`
+    <img src="./assets/${images[i].image}" alt="${images[i].title}" class="imgclass">
+    `
+}
+
