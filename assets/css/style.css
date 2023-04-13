@@ -49,9 +49,11 @@
 #prevArrow{
     top: 1rem;
     right: 9%;
+    cursor: pointer;
 }
 
 #nextArrow{
     bottom: 1rem;
     right: 9%;
+    cursor: pointer;
 }

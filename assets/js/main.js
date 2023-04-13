@@ -59,3 +59,34 @@ for(let i = 0; i<=images.length-1; i++){
     `
 }
 
+// definisco una variabile contatore
+// mi serve per segnare la posizione dell'elemento dell'array creato da "getElementByClassName"che voglio prendere
+let active = 0
+
+// prendo la prima img grande a dx
+carosello.getElementsByClassName('imgclass')[active].classList.add('active')
+
+//prendo la prima img piccola a sinistra
+const thumbItem = document.querySelector('.item')
+thumbItem.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
+
+// assegno delle variabili ai bottoni
+const prev = document.querySelector('#prevArrow')
+const next = document.querySelector('#nextArrow')
+
+//assegno degli eventi ai bottoni
+prev.addEventListener('click', function(){
+    if(active == 0){
+        active = images.length -1
+    } else{
+        active--;
+    }
+
+    document.querySelector('.imgclass.active').classList.remove('active');
+    carosello.getElementsByClassName('imgclass')[active].classList.add('active')
+
+    document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
+    carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
+
+})
+
