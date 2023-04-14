@@ -52,6 +52,10 @@ for(let i = 0; i<=images.length-1; i++){
 for(let i = 0; i<=images.length-1; i++){
     carosello.innerHTML+=`
     <img src="./assets/${images[i].image}" alt="${images[i].title}" class="imgclass">
+    <div class="description">
+        <h1>${images[i].title}</h1>
+        <p>${images[i].text}</p>
+    </div>
     `
 }
 
@@ -61,6 +65,9 @@ let active = 0
 
 // prendo la prima img grande a dx
 carosello.getElementsByClassName('imgclass')[active].classList.add('active')
+
+// prendo la descrizione
+carosello.getElementsByClassName('description')[active].classList.add('d-block')
 
 //prendo la prima img piccola a sinistra
 const thumbItem = document.querySelector('.item')
@@ -104,6 +111,9 @@ function prevImage(){
     document.querySelector('.imgclass.active').classList.remove('active');
     carosello.getElementsByClassName('imgclass')[active].classList.add('active')
 
+    document.querySelector('.description.d-block').classList.remove('d-block');
+    carosello.getElementsByClassName('description')[active].classList.add('d-block')
+
     document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
     carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
 }
@@ -117,6 +127,9 @@ function nextImage(){
 
     document.querySelector('.imgclass.active').classList.remove('active');
     carosello.getElementsByClassName('imgclass')[active].classList.add('active')
+
+    document.querySelector('.description.d-block').classList.remove('d-block');
+    carosello.getElementsByClassName('description')[active].classList.add('d-block')
 
     document.querySelector('.thumbclass.activeThumb').classList.remove('activeThumb');
     carosello.getElementsByClassName('thumbclass')[active].classList.add('activeThumb')
