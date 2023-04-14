@@ -48,7 +48,7 @@ for(let i = 0; i<=images.length-1; i++){
     `
 }
 
-// large images
+// large images with text
 for(let i = 0; i<=images.length-1; i++){
     carosello.innerHTML+=`
     <img src="./assets/${images[i].image}" alt="${images[i].title}" class="imgclass">

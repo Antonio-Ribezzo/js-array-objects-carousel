@@ -8,7 +8,7 @@
 }
 
 .imgclass{
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit:fill;
     display: none;
@@ -64,5 +64,9 @@
     bottom: 1rem;
     right: 9%;
     cursor: pointer;
+}
+
+p{
+    font-size: 0.8rem;
 }
 
